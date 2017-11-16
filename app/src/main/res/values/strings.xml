@@ -8,7 +8,14 @@
     <string name="aherome_bornBtn">BORN WITH THEM</string>
     <string name="aherome_chooseBtn">CHOOSE POWERS</string>
     <string name="aherome_powerQuestion">How did you get your powers?</string>
+    <string name="aherome_showbackstory">SHOW BACKSTORY</string>
+    <string name="aherome_pickapower">PICK A POWER</string>
+    <string name="aherome_turtle">Turtle Power</string>
+    <string name="aherome_lightning">Lightning</string>
+    <string name="aherome_superman">Flight</string>
+    <string name="aherome_spiderman">Web Slinging</string>
+    <string name="aherome_cyclop">Laser Vision</string>
+    <string name="aherome_hulk">Super Strength</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

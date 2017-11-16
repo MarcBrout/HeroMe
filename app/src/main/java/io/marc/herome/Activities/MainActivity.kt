@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(),
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .add(R.id.fragment_container, MainFragment.newInstance("1", "2"), "mainFragment")
+                    .add(R.id.fragment_container, MainFragment.newInstance(), "mainFragment")
                     .commit()
         }
     }
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(),
     fun loadPowerPickerFragment() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_container, PowerPickerFragment.newInstance("1", "2"), "powerPickFragment")
+                .replace(R.id.fragment_container, PowerPickerFragment.newInstance(), "powerPickFragment")
                 .addToBackStack(null)
                 .commit()
     }

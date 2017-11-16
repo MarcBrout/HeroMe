@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">HeroMe</string>
-    <string name="aherome_toolbarDesc">FAIS DE MOI UN HERO !</string>
+    <string name="aherome_toolbarDesc">FAIS DE MOI UN HÉRO !</string>
     <string name="aherome_accidentBtn">VENU PAR ACCIDENT</string>
-    <string name="aherome_geneticBtn">MUTATION GENETIQUE</string>
-    <string name="aherome_bornBtn">NE AVEC</string>
+    <string name="aherome_geneticBtn">MUTATION GÉNÉTIQUE</string>
+    <string name="aherome_bornBtn">NÉ AVEC</string>
     <string name="aherome_chooseBtn">SELECTION DES POUVOIRS</string>
     <string name="aherome_powerQuestion">Comment avez-vous obtenu vos pouvoirs ?</string>
+    <string name="aherome_showbackstory">LIRE L\'ORIGINE</string>
+    <string name="aherome_pickapower">CHOISI UN POUVOIR</string>
+    <string name="aherome_turtle">Pouvoir Carapace</string>
+    <string name="aherome_lightning">Éclair</string>
+    <string name="aherome_superman">Voler</string>
+    <string name="aherome_spiderman">Lanceur de Toiles</string>
+    <string name="aherome_cyclop">Vision Laser</string>
+    <string name="aherome_hulk">Force Surhumaine</string>
 </resources>

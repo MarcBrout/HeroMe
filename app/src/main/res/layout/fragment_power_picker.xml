@@ -1,13 +1,216 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ppicker_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/appbg"
     tools:context="io.marc.herome.Fragments.PowerPickerFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <android.support.constraint.Guideline
+        android:id="@+id/ppicker_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/ppicker_btnTopGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="119dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/ppicker_botBtnGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88007057" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/ppicker_leftBtnGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.083333336" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/ppicker_rightBtnGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.921875" />
+
+    <ImageView
+        android:id="@+id/ppicker_threadLines"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/lineoutlinepickapower"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ppicker_top" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="6"
+        app:layout_constraintBottom_toTopOf="@+id/ppicker_botBtnGl"
+        app:layout_constraintLeft_toRightOf="@+id/ppicker_leftBtnGl"
+        app:layout_constraintRight_toLeftOf="@+id/ppicker_rightBtnGl"
+        app:layout_constraintTop_toBottomOf="@+id/ppicker_btnTopGl">
+
+        <Button
+            android:id="@+id/ppicker_turtleBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/turtlepower"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_turtle"
+            android:textAllCaps="false"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/ppicker_thorBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/thorshammer"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_lightning"
+            android:textAllCaps="false"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/ppicker_supermanBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/supermancrest"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_superman"
+            android:textAllCaps="false"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/ppicker_spidermanBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/spiderweb"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_spiderman"
+            android:textAllCaps="false"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/ppicker_cyclopBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/laservision"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_cyclop"
+            android:textAllCaps="false"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/ppicker_hulkBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/superstrength"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_hulk"
+            android:textAllCaps="false"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ppicker_showbStory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:background="@drawable/hero_button_solid"
+        android:backgroundTint="@color/ahero_yellow"
+        android:text="@string/aherome_showbackstory"
+        android:textColor="@color/ahero_darkBlue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ppicker_threadLines"
+        app:layout_constraintEnd_toStartOf="@+id/ppicker_rightBtnGl"
+        app:layout_constraintStart_toStartOf="@+id/ppicker_leftBtnGl"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/aherome_pickapower"
+        android:textColor="@color/ahero_yellow"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/ppicker_rightBtnGl"
+        app:layout_constraintStart_toStartOf="@+id/ppicker_leftBtnGl"
+        app:layout_constraintTop_toTopOf="@+id/ppicker_threadLines" />
+
+</android.support.constraint.ConstraintLayout>
