@@ -4,41 +4,173 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/appbg"
     tools:context="io.marc.herome.Fragments.MainFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/main_toolBarGuidline"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/herome_toolbar"
+        android:layout_width="61dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/main_outline"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/aherome_toolbarDesc"
-        android:scaleType="centerCrop"
-        android:src="@drawable/topbannerbar"
-        app:layout_constraintBottom_toTopOf="@+id/main_toolBarGuidline"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/lineoutline"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_toolBarGuidline"
+        app:layout_constraintVertical_bias="0.0" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/main_toolBarGuidline"
+        android:id="@+id/main_btnTopGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.54" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/main_btnBotguideline"
+        app:layout_constraintLeft_toRightOf="@+id/main_btnLeftGuideline"
+        app:layout_constraintRight_toLeftOf="@+id/main_btnRightGuideLine"
+        app:layout_constraintTop_toBottomOf="@+id/main_btnTopGuideline">
+
+        <Button
+            android:id="@+id/main_accidentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/lightning"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_accidentBtn"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_editor_absoluteY="306dp" />
+
+        <Button
+            android:id="@+id/main_geneticBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/atomic"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_geneticBtn"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/main_bornBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/hero_button_transparent"
+            android:drawableLeft="@drawable/rocket"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/aherome_bornBtn"
+            android:textColor="@color/ahero_yellow"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/heroes"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/main_btnBotguideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87830687" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/main_btnLeftGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/main_btnRightGuideLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91" />
+
+    <Button
+        android:id="@+id/main_choosePowerBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/hero_button_solid"
+        android:backgroundTint="@color/ahero_yellow"
+        android:text="@string/aherome_chooseBtn"
+        android:textColor="@color/ahero_darkBlue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_btnRightGuideLine"
+        app:layout_constraintStart_toStartOf="@+id/main_btnLeftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/main_btnBotguideline" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/aherome_powerQuestion"
+        android:textColor="@color/ahero_yellow"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/main_btnRightGuideLine"
+        app:layout_constraintStart_toStartOf="@+id/main_btnLeftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/main_outline" />
 
 </android.support.constraint.ConstraintLayout>

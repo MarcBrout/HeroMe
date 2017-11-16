@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">HeroMe</string>
     <string name="aherome_toolbarDesc">FAIS DE MOI UN HERO !</string>
+    <string name="aherome_accidentBtn">VENU PAR ACCIDENT</string>
+    <string name="aherome_geneticBtn">MUTATION GENETIQUE</string>
+    <string name="aherome_bornBtn">NE AVEC</string>
+    <string name="aherome_chooseBtn">SELECTION DES POUVOIRS</string>
+    <string name="aherome_powerQuestion">Comment avez-vous obtenu vos pouvoirs ?</string>
 </resources>

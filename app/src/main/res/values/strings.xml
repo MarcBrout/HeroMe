@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="aherome_toolbarDesc">HERO ME !</string>
+    <string name="aherome_accidentBtn">CAME BY ACCIDENT</string>
+    <string name="aherome_geneticBtn">GENETIC MUTATION</string>
+    <string name="aherome_bornBtn">BORN WITH THEM</string>
+    <string name="aherome_chooseBtn">CHOOSE POWERS</string>
+    <string name="aherome_powerQuestion">How did you get your powers?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
