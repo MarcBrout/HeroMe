@@ -1,6 +1,8 @@
 package io.marc.herome.Fragments
 
 import android.content.Context
+import android.graphics.Canvas
+import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -54,7 +56,9 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater?.inflate(R.layout.fragment_main, container, false) ?: return null
 
+        buttons.clear()
         for (id in Buttons.values()) {
+            println(id)
             buttons.add(view.findViewById(ids[id.ordinal]))
             buttons[id.ordinal].setOnClickListener { v ->
                 onClick(v as Button, id.ordinal)
@@ -68,10 +72,12 @@ class MainFragment : Fragment() {
 
         chooseBtn?.isEnabled = false
         chooseBtn?.background?.alpha = 128
+
         return view
     }
 
     fun onClick(button: Button, id: Int) {
+        println(id)
         for (type in Buttons.values()) {
             buttons[type.ordinal].setCompoundDrawablesWithIntrinsicBounds(leftDrawables[type.ordinal], 0, 0, 0)
         }
@@ -85,7 +91,7 @@ class MainFragment : Fragment() {
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         if (mListener != null) {
-            mListener!!.onPowerPickerFragmentInteraction(uri)
+            mListener!!.onMainFragmentInteraction(uri)
         }
     }
 
@@ -114,7 +120,7 @@ class MainFragment : Fragment() {
      */
     interface mainFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onPowerPickerFragmentInteraction(uri: Uri)
+        fun onMainFragmentInteraction(uri: Uri)
     }
 
     companion object {

@@ -43,7 +43,7 @@ class PowerPickerFragment : Fragment() {
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         if (mListener != null) {
-            mListener!!.onFragmentInteraction(uri)
+            mListener!!.onPowerPickerFragmentInteraction(uri)
         }
     }
 
@@ -72,7 +72,7 @@ class PowerPickerFragment : Fragment() {
      */
     interface PowerPickerFragmentListener {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        fun onPowerPickerFragmentInteraction(uri: Uri)
     }
 
     companion object {

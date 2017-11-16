@@ -7,17 +7,6 @@
     android:background="@drawable/appbg"
     tools:context="io.marc.herome.Fragments.MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <include
-        android:id="@+id/main_toolbar"
-        layout="@layout/herome_toolbar"
-        android:layout_width="61dp"
-        android:layout_height="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/main_outline"
@@ -31,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_toolBarGuidline"
+        app:layout_constraintTop_toBottomOf="@id/guideline8"
         app:layout_constraintVertical_bias="0.0" />
 
     <android.support.constraint.Guideline
@@ -172,5 +161,12 @@
         app:layout_constraintEnd_toStartOf="@+id/main_btnRightGuideLine"
         app:layout_constraintStart_toStartOf="@+id/main_btnLeftGuideline"
         app:layout_constraintTop_toTopOf="@+id/main_outline" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
 
 </android.support.constraint.ConstraintLayout>

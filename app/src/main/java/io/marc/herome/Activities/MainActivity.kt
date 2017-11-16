@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity(),
                 .commit()
     }
 
-    override fun onFragmentInteraction(uri: Uri) {
+    override fun onPowerPickerFragmentInteraction(uri: Uri) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun onPowerPickerFragmentInteraction(uri: Uri) {
+    override fun onMainFragmentInteraction(uri: Uri) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
