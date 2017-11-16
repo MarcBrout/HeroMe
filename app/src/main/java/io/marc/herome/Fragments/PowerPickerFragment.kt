@@ -21,7 +21,7 @@ import io.marc.herome.R
  * create an instance of this fragment.
  */
 class PowerPickerFragment : Fragment() {
-    private enum class Buttons {
+    enum class Buttons {
         TURTLE,
         THOR,
         SUPERMAN,
@@ -50,6 +50,14 @@ class PowerPickerFragment : Fragment() {
     private var backstoryBtn: Button? = null
     
     private var mListener: PowerPickerFragmentListener? = null
+    private var mainPower: Int = -1
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (arguments != null) {
+            mainPower = arguments.getInt(PowerPickerFragment.MAIN_POWER)
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -58,7 +66,6 @@ class PowerPickerFragment : Fragment() {
 
         buttons.clear()
         for (id in Buttons.values()) {
-            println(id)
             buttons.add(view.findViewById(ids[id.ordinal]))
             buttons[id.ordinal].setOnClickListener { v ->
                 onClick(v as Button, id.ordinal)
@@ -67,7 +74,7 @@ class PowerPickerFragment : Fragment() {
 
         backstoryBtn = view.findViewById(R.id.ppicker_showbStory)
         backstoryBtn?.setOnClickListener { v ->
-            (activity as MainActivity).loadPowerPickerFragment()
+            (activity as MainActivity).loadPowerPickerFragment(mainPower)
         }
 
         backstoryBtn?.isEnabled = false
@@ -77,7 +84,6 @@ class PowerPickerFragment : Fragment() {
     }
 
     fun onClick(button: Button, id: Int) {
-        println(id)
         for (type in Buttons.values()) {
             buttons[type.ordinal].setCompoundDrawablesWithIntrinsicBounds(leftDrawables[type.ordinal], 0, 0, 0)
         }
@@ -124,12 +130,20 @@ class PowerPickerFragment : Fragment() {
     }
 
     companion object {
+        private val MAIN_POWER = "mainpower"
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
          * @return A new instance of fragment PowerPickerFragment.
          */
-        fun newInstance(): PowerPickerFragment = PowerPickerFragment()
+        fun newInstance(mainPower: Int): PowerPickerFragment {
+            val fragment = PowerPickerFragment()
+            val args = Bundle()
+            args.putInt(PowerPickerFragment.MAIN_POWER, mainPower)
+            fragment.arguments = args
+            return fragment
+        }
     }
 }

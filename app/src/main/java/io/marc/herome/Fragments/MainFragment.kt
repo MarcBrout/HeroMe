@@ -23,7 +23,7 @@ import io.marc.herome.R
  * create an instance of this fragment.
  */
 class MainFragment : Fragment() {
-    private enum class Buttons {
+    enum class Buttons {
         GENETIC,
         BORN,
         ACCIDENT
@@ -34,6 +34,7 @@ class MainFragment : Fragment() {
     private var buttons: ArrayList<Button> = arrayListOf()
     private var chooseBtn: Button? = null
     private var slitheRingThreads: SlitheringThreads? = null
+    private var selectedPower = -1
 
     private var mListener: mainFragmentInteractionListener? = null
 
@@ -44,7 +45,6 @@ class MainFragment : Fragment() {
 
         buttons.clear()
         for (id in Buttons.values()) {
-            println(id)
             buttons.add(view.findViewById(ids[id.ordinal]))
             buttons[id.ordinal].setOnClickListener { v ->
                 onClick(v as Button, id.ordinal)
@@ -53,7 +53,7 @@ class MainFragment : Fragment() {
 
         chooseBtn = view.findViewById(R.id.main_choosePowerBtn)
         chooseBtn?.setOnClickListener { v ->
-            (activity as MainActivity).loadPowerPickerFragment()
+            (activity as MainActivity).loadPowerPickerFragment(selectedPower)
         }
 
         chooseBtn?.isEnabled = false
@@ -65,12 +65,12 @@ class MainFragment : Fragment() {
     }
 
     fun onClick(button: Button, id: Int) {
-        println(id)
         for (type in Buttons.values()) {
             buttons[type.ordinal].setCompoundDrawablesWithIntrinsicBounds(leftDrawables[type.ordinal], 0, 0, 0)
         }
 
         button.setCompoundDrawablesWithIntrinsicBounds(leftDrawables[id], 0, R.drawable.itemselected, 0)
+        selectedPower = id
 
         chooseBtn?.isEnabled = true
         chooseBtn?.background?.alpha = 255

@@ -15,4 +15,8 @@
     <string name="aherome_spiderman">Lanceur de Toiles</string>
     <string name="aherome_cyclop">Vision Laser</string>
     <string name="aherome_hulk">Force Surhumaine</string>
+    <string name="aherome_secondarypower">pouvoir secondaire</string>
+    <string name="aherome_primarypower">pouvoir primaire</string>
+    <string name="aherome_backstory">origine</string>
+    <string name="aherome_startover">recommencer</string>
 </resources>
