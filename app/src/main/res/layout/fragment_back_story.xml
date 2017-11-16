@@ -191,7 +191,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/main_choosePowerBtn2"
+        android:id="@+id/bstory_startOverBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="12dp"

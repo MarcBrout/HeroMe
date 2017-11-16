@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import io.marc.herome.Activities.MainActivity
 
 import io.marc.herome.R
 
@@ -23,8 +25,11 @@ class BackStoryFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var mainPower: Int? = null
     private var secondaryPower: Int? = null
+    private var primaryBtn: Button? = null
+    private var secondBtn: Button? = null
+    private var startOverBtn: Button? = null
 
-    private var mListener: OnFragmentInteractionListener? = null
+    private var mListener: OnBackStoryFragmentListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,19 +42,35 @@ class BackStoryFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_back_story, container, false)
+        val view = inflater.inflate(R.layout.fragment_back_story, container, false)
+
+        primaryBtn = view.findViewById(R.id.bstory_primaryPwrBtn)
+        secondBtn = view.findViewById(R.id.bstory_secondPwrBtn)
+        startOverBtn = view.findViewById(R.id.bstory_startOverBtn)
+
+        val mainActivity: MainActivity = activity as MainActivity
+        val primaryPowers = mainActivity.getPrimaryPowerIds()
+        val secondaryPowers = mainActivity.getSecondaryPowersIds()
+        val primaryStrings = mainActivity.getPrimaryPowerStrings()
+        val secondaryStrings = mainActivity.getSecondaryPowerStrings()
+
+        primaryBtn?.setCompoundDrawablesWithIntrinsicBounds(primaryPowers[mainPower] ?: 0, 0, 0 ,0)
+        primaryBtn?.setText(primaryStrings[mainPower] ?: 0)
+        secondBtn?.setCompoundDrawablesWithIntrinsicBounds(secondaryPowers[secondaryPower] ?: 0, 0, 0 ,0)
+        secondBtn?.setText(secondaryStrings[secondaryPower] ?: 0)
+        return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         if (mListener != null) {
-            mListener!!.onFragmentInteraction(uri)
+            mListener!!.onBackStoryFragmentInteraction(uri)
         }
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
+        if (context is OnBackStoryFragmentListener) {
             mListener = context
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
@@ -70,9 +91,9 @@ class BackStoryFragment : Fragment() {
      *
      * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
      */
-    interface OnFragmentInteractionListener {
+    interface OnBackStoryFragmentListener {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        fun onBackStoryFragmentInteraction(uri: Uri)
     }
 
     companion object {

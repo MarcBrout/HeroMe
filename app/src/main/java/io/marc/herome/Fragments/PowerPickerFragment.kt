@@ -51,6 +51,7 @@ class PowerPickerFragment : Fragment() {
     
     private var mListener: PowerPickerFragmentListener? = null
     private var mainPower: Int = -1
+    private var secondPower: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,7 +75,7 @@ class PowerPickerFragment : Fragment() {
 
         backstoryBtn = view.findViewById(R.id.ppicker_showbStory)
         backstoryBtn?.setOnClickListener { v ->
-            (activity as MainActivity).loadPowerPickerFragment(mainPower)
+            (activity as MainActivity).loadBackStoryFragment(mainPower, secondPower)
         }
 
         backstoryBtn?.isEnabled = false
@@ -89,6 +90,7 @@ class PowerPickerFragment : Fragment() {
         }
 
         button.setCompoundDrawablesWithIntrinsicBounds(leftDrawables[id], 0, R.drawable.itemselected, 0)
+        secondPower = id
 
         backstoryBtn?.isEnabled = true
         backstoryBtn?.background?.alpha = 255
