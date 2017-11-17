@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import io.marc.herome.Activities.MainActivity
 
 import io.marc.herome.R
@@ -23,8 +24,8 @@ import io.marc.herome.R
 class BackStoryFragment : Fragment() {
 
     // TODO: Rename and change types of parameters
-    private var mainPower: Int? = null
-    private var secondaryPower: Int? = null
+    private var mainPower: Int = 0
+    private var secondaryPower: Int = 0
     private var primaryBtn: Button? = null
     private var secondBtn: Button? = null
     private var startOverBtn: Button? = null
@@ -54,10 +55,15 @@ class BackStoryFragment : Fragment() {
         val primaryStrings = mainActivity.getPrimaryPowerStrings()
         val secondaryStrings = mainActivity.getSecondaryPowerStrings()
 
-        primaryBtn?.setCompoundDrawablesWithIntrinsicBounds(primaryPowers[mainPower] ?: 0, 0, 0 ,0)
-        primaryBtn?.setText(primaryStrings[mainPower] ?: 0)
-        secondBtn?.setCompoundDrawablesWithIntrinsicBounds(secondaryPowers[secondaryPower] ?: 0, 0, 0 ,0)
-        secondBtn?.setText(secondaryStrings[secondaryPower] ?: 0)
+        view.findViewById<TextView>(R.id.bstory_heroName)?.text = mainActivity.getHeroNames()[secondaryPower]
+        primaryBtn?.setCompoundDrawablesWithIntrinsicBounds(primaryPowers[mainPower], 0, 0 ,0)
+        primaryBtn?.setText(primaryStrings[mainPower])
+        secondBtn?.setCompoundDrawablesWithIntrinsicBounds(secondaryPowers[secondaryPower], 0, 0 ,0)
+        secondBtn?.setText(secondaryStrings[secondaryPower])
+
+        startOverBtn?.setOnClickListener { v ->
+            activity.onBackPressed()
+        }
         return view
     }
 
